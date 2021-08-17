@@ -10,7 +10,10 @@ let Search = (props) => {
 
             <div class="col-5 mt-4">
                 <div class="input-group flex-nowrap">
-                    <input type="text" class="form-control" placeholder="Search..." aria-label="Username" aria-describedby="addon-wrapping"></input>
+                    <input type="text" class="form-control" placeholder="Search..." value = {props.Search}
+                    onChange={(e)=>{
+                        props.updateSearch(e.currentTarget.value)
+                    }}></input>
                 </div>
             </div>
         

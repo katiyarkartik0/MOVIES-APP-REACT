@@ -23,6 +23,15 @@ class Table extends React.Component {
                 return el;
             }
         })
+
+        FilteredMoviesArray = FilteredMoviesArray.filter((el)=>{
+            let UIoutput = el.title
+            UIoutput = UIoutput.toLowerCase();
+            let userInput = this.props.search.toLowerCase();
+            if(UIoutput.includes(userInput)){
+                return el;
+            }
+        })
         let numberOfPages = Math.ceil(FilteredMoviesArray.length/4);
         let startIndex = (this.state.currPage - 1) * 4;
         let endIndex = Math.min(FilteredMoviesArray.length, this.state.currPage * 4)
